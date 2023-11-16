@@ -24,4 +24,9 @@ public class Circle implements MyComparable {
         Circle otherCircle = (Circle) other ;
         return (x == otherCircle.x) && (y == otherCircle.y)&& (radius==otherCircle.radius);
     }
+    @Override
+    public String toString()
+    {
+        return String.format("Circle{x=%d, y=%d, radius=%d}",x,y,radius);
+    }
 }

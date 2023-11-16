@@ -18,5 +18,10 @@ public class Rectangle implements MyComparable{
     public boolean equal(Object other) {
         return false;
     }
+    @Override
+    public String toString()
+    {
+        return String.format("Rectangle{area=%d}",height*width);
+    }
 
 }
