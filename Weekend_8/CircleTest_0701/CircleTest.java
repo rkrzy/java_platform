@@ -1,4 +1,4 @@
-package Weekend_8;
+package Weekend_8.CircleTest_0701;
 
 
 public class CircleTest {
