@@ -1,15 +1,13 @@
-package Weekend_8.CircleTest_0701;
+package Weekend_8.Circle_sort_Test_0702;
 
 public class Rectangle implements MyComparable{
-
     int width;
     int height;
     public Rectangle(int width,int height)
     {
+        this.height = height;
         this.width = width;
-        this.height =height;
-    }
-    @Override
+    }    @Override
     public int compareTo(Object other) {
         if(!(other instanceof Rectangle))return -2;
         Rectangle Rec = (Rectangle) other;
@@ -24,12 +22,13 @@ public class Rectangle implements MyComparable{
 
     @Override
     public boolean equal(Object other) {
-        if(!(other instanceof Rectangle))
+        if(!(other instanceof Weekend_8.CircleTest_0701.Rectangle))
         {
             return false;
         }
-        Rectangle Rec = (Rectangle) other;
+        Weekend_8.CircleTest_0701.Rectangle Rec = (Weekend_8.CircleTest_0701.Rectangle) other;
         return (this.width == ((Rectangle) other).width)&&(this.height==(((Rectangle) other).height));}
+
     @Override
     public String toString()
     {
