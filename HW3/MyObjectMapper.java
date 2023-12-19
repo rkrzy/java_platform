@@ -3,6 +3,7 @@ package HW3;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.util.Map;
+import java.util.Objects;
 
 public class MyObjectMapper {
 
@@ -18,20 +19,19 @@ public class MyObjectMapper {
 
 
 
-//    public <T> T readValue(String jsonString, Class<T> clazz) throws Exception {
-//
-//        Map<String,Object> map = parser.parse(jsonString);
-//        Constructor<T> constructor = clazz.getDeclaredConstructor();
-//        T t = constructor.newInstance();
-//        for(Field field : clazz.getDeclaredFields())
-//        {
-//            if(map.containsKey(field.getName()))
-//            {
-//                field.setAccessible(true);
-//                field.set(t,map.get(field.getName()));
-//            }
-//        }
-//        return t;
-//    }
+    public <T> T readValue(String jsonString, Class<T> clazz) throws Exception {
+
+        Map<String, Object> map = parser.parse(jsonString);
+        Constructor<T>constructor = clazz.getConstructor();
+        T t = constructor.newInstance();
+        for(Field field : clazz.getDeclaredFields())
+        {
+            if(map.containsKey(field.getName())){
+                field.setAccessible(true);
+                field.set(t,map.get(field.getName()));
+            }
+        }
+        return t;
+    }
 
 }
